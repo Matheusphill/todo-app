@@ -7,8 +7,11 @@
 
 :root {
     --bg-header-mobile: url(../imagens/bg-header-mobile-light.png);
+    --bg-header-desktop: url(../imagens/bg-header-desktop-light.png);
     --input-box-shadow:  rgba(194, 195, 214, 0.50);
     --input-color: #494C6B;
+    --placeholder-color: #9495a5;
+    --button-color-hover:#494C6B;
     --button-color: #393a4b;
     --bg-body: #fafafa; 
     --bg-tarefas: #fff;
@@ -16,6 +19,9 @@
     --border-color: #e3e4f1;
     --text-color: #494c6b;
     --info-text-color: #9495a5;
+    --info-button-hover: #494c6b;
+    --info-button-active: #3a7cfd;
+
 }
 
 body{
@@ -72,7 +78,10 @@ header form  input{
     font-size: 0.75rem;
     color: var(--input-color);
 
+}
 
+header form  input::placeholder{
+    color: var(--placeholder-color);
 }
 
 header form button{
@@ -86,7 +95,6 @@ header form button{
 }
 
 main {
-    min-height: calc(100vh - 12.5rem);
     padding-inline: 1.75rem;
 
 }
@@ -169,9 +177,63 @@ main {
     
 }
 
-@media (min-widh: 1000px){
+.informacoes a:hover{
+    color: var(--info-button-hover);
+}
+
+.botoes .active{
+    color: var(--info-button-active);
+}
+
+@media(min-width: 1000px){
+
+    header {
+        background-image: var(--bg-header-desktop);
+        height: 18.75rem;
+        padding-top: 4.37rem;
+    } 
+
+    header div div {
+        margin-bottom: 3rem;
+    }
+
+    header form  input{
+        padding: 1.125rem 1.5rem;
+        font-size: 1.125rem;
+    }
+
+    header form button{
+        font-size: 1.125rem;
+
+    }
+
+    header form button:hover{
+        cursor: pointer;
+        background: var(--button-color-hover);
+    }
+
     section.botoes{
         display: none;
+    }
+
+    .tarefas{
+        margin-top: -3rem;
+    }
+
+    .tarefas .tarefa {
+        padding: 1.125rem 1.5rem;
+    }
+
+    .tarefa div{
+        font-size: 1.125rem;
+    }
+
+    .informacoes {
+        font-size: 0.875rem;
+    }
+
+    .informacoes a:hover{
+        color: var(--info-button-hover);
     }
 
     .informacoes .botoes{
@@ -193,4 +255,5 @@ main {
     .tarefa:hover button{
         visibility: initial;
     }
+
 }
