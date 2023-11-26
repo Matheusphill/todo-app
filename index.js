@@ -54,9 +54,9 @@ app.get('/ativas', (requisicao,resposta) => {
             }
         })
 
-        const quantidadeTarefasAtivas = tarefas.length
+        const quantidadeTarefas = tarefas.length
 
-        resposta.render('ativas', {tarefas, quantidadeTarefasAtivas})
+        resposta.render('ativas', {tarefas, quantidadeTarefas})
     })
 })
 
